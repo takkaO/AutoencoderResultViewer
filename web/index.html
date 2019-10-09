@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>AutoEncoder app (Eel)</title>
+
+	<link href="./css/index.css" rel="stylesheet">
+
+	<!-- Load Bootstrap -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+		crossorigin="anonymous"></script>
+
+	<!-- Load Bootstrap-slider -->
+	<link href="./css/bootstrap-slider.css" rel="stylesheet">
+	<script src="bootstrap-slider.js"></script>
+</head>
+
+<body>	
+	<h2 class="title">AE-Eel</h2>
+	<div class="parent-panel">	
+		<div class="child-panel">
+			<img id="canvas" src="https://placehold.jp/200x200.png?text=Drop Here!" alt="Drop Here!" class="img-thumbnail">
+		</div>
+
+		<div class="separator"></div>
+	
+		<div class="child-panel">
+			<!--
+			<div class="my_slider">
+				<input id="s0" type="text" data-slider-min="-50" data-slider-max="50" data-slider-step="0.01" data-slider-value="0" />
+				<span class="s_exp"> V0: 
+					<span id="sv0">0</span>
+				</span>
+			</div>
+			-->
+
+			<div id="slider-panel-anker"></div>
+
+			<script>
+				var anker = document.getElementById('slider-panel-anker');
+				
+				for(var i=0; i<32; i++){
+					const elem = '<div class="my_slider"> <input id = "s'+String(i)+'" type = "text" data-slider-min="-50" data-slider-max="50" data-slider-step="0.01" data-slider-value="0"/> <span class="s_exp"> v' + String(i) +': <span id="sv' + String(i) +'">0</span></span></div>';
+					
+					anker.insertAdjacentHTML('beforebegin', elem);
+				}
+			</script>
+
+			<button id="reset-btn" type="button" class="btn btn-dark">Reset</button>
+		</div>
+	</div>
+
+
+	<script type="text/javascript" src="./eel.js"></script>
+	<script type="text/javascript" src="./js/main.js"></script>
+</body>
+
+</html>
