@@ -30,12 +30,14 @@
 	<h2 class="title">AE-Eel</h2>
 	<div class="parent-panel">	
 		<div class="child-panel">
-			<img id="canvas" src="https://placehold.jp/200x200.png?text=Drop Here!" alt="Drop Here!" class="img-thumbnail">
+			<div class="canvas">
+				<img id="canvas" src="https://placehold.jp/200x200.png?text=Drop Here!" alt="Drop Here!" class="img-thumbnail">
+			</div>
 		</div>
 
 		<div class="separator"></div>
 	
-		<div class="child-panel">
+		<div class="child-panel child-panel-right">
 			<!--
 			<div class="my_slider">
 				<input id="s0" type="text" data-slider-min="-50" data-slider-max="50" data-slider-step="0.01" data-slider-value="0" />
@@ -48,10 +50,14 @@
 			<div id="slider-panel-anker"></div>
 
 			<script>
-				var anker = document.getElementById('slider-panel-anker');
+				let anker = document.getElementById('slider-panel-anker');
+				let slider_min = 0;
+				let slider_max = 20;
+				let slider_step = 0.01;
+				var slider_num = 32;
 				
-				for(var i=0; i<32; i++){
-					const elem = '<div class="my_slider"> <input id = "s'+String(i)+'" type = "text" data-slider-min="-50" data-slider-max="50" data-slider-step="0.01" data-slider-value="0"/> <span class="s_exp"> v' + String(i) +': <span id="sv' + String(i) +'">0</span></span></div>';
+				for(var i=0; i<slider_num; i++){
+					const elem = '<div class="my_slider"> <input id = "s'+String(i)+'" type = "text" data-slider-min="'+String(slider_min)+'" data-slider-max="'+String(slider_max)+'" data-slider-step="'+String(slider_step)+'" data-slider-value="0"/> <span class="s_exp"> v' + String(i) +': <span id="sv' + String(i) +'">0</span></span></div>';
 					
 					anker.insertAdjacentHTML('beforebegin', elem);
 				}

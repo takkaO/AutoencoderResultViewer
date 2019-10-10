@@ -1,21 +1,29 @@
 html, body {
-	height: 100%;
+	height: 100vh;
+	overflow-y: hidden;
 }
+
 
 .parent-panel {
 	background: #cccccc; 
 	display: table; 
 	width: 100%; 
-	height: 100%; 
+	height: 100vh; 
 	border-collapse: collapse;
+	overflow-y: scroll;
 }
 
 .child-panel {
 	background: rgb(233, 233, 233); 
 	display: table-cell; 
-	width: 50%; 
+	width: 50vw; 
 	padding: 10px; 
-	height: 100%;
+	height: 95vh;
+}
+
+.child-panel-right {
+	display: block;
+	overflow-y: scroll;
 }
 
 .title {
@@ -23,7 +31,8 @@ html, body {
 }
 
 .separator {
-	background:rgb(255, 255, 255);
+	background:rgb(199, 199, 199);
+	display: table-cell; 
 	width:2px;
 	height:0px;
 }
@@ -39,9 +48,14 @@ html, body {
 	padding: 10px;
 }
 
+.canvas{
+	width: 350px;
+	margin: 0 auto;
+}
+
 #canvas{
-	min-width: 200px;
-	min-height: 200px;
+	min-width: 350px;
+	min-height: 350px;
 	position: absolute;
 }
 

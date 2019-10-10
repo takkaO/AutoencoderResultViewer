@@ -2,7 +2,7 @@
 
 var arrSlider = new Array();
 var arrSliderValues = new Array();
-for(var i=0; i<32; i++){
+for(var i=0; i<slider_num; i++){
 	arrSlider.push(new Slider("#s" + String(i)));
 	arrSliderValues.push(0);
 	const sv = "sv" + String(i);

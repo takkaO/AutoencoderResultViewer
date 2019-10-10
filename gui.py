@@ -5,8 +5,10 @@ import base64
 import io
 from PIL import Image
 
+# load decoder model
 decoder = tf.keras.models.load_model("decoder.h5")
 
+# Set default encoded values. (include batch)
 default = np.array([
     [0,  11.234877,   1.8221463, 12.184746,   5.210108,   5.7688284,
      7.117953,   4.66948, 6.3518763, 2.8289835, 10.993784,  5.3251004,
